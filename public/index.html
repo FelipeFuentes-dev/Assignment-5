@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | INM320 Assignment 5</title>
+
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+      <link rel="stylesheet" href="/assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+     <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+   <div class="dashboard-layout">
+        <!-- Mobile Navigation -->
+         <nav class="navbar navbar-dark bg-dark d-lg-none px-3">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-box-fill me-2" aria-hidden="true"></i>
+                Purity UI Dashboard
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSidebar" aria-controls="dashboardSidebar" aria-label="Open navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+         </nav>
+
+         <!-- Sidebar -->
+          <aside class="offcanvas-lg offcanvas-start dashboard-sidebar" tabindex="-1" id="dashboardSidebar" aria-labelledby="sidebarTitle">
+                <div class="offcanvas-header d-lg-none">
+                    <h2 class="offcanvas-title fs-5" id="sidebarTitle">
+                        Purity UI Dashboard
+                    </h2>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#dashboardSidebar" aria-label="Close Navigation"></button>
+                </div>
+
+                <div class="offcanvas-body d-flex flex-column p-3 py-2">
+                    <a class="sidebar-brand d-none d-lg-flex align-items-center text-decoration-none" href="#">
+                        <i class="bi bi-box-fill me-2" aria-hidden="true"></i>
+                        <span>Purity UI Dashboard</span>
+                    </a>
+
+                    <hr>
+                    <nav aria-label="Dashboard navigation">
+                        <ul class="nav nav-pills flex-column gap-1">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                    <i class="bi bi-house-door-fill me-3" aria-hidden="true"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="bi bi-bar-chart-fill me-3" aria-hidden="true"></i>
+                                    Tables
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="bi bi-credit-card-fill me-3" aria-hidden="true"></i>
+                                    Billing
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="bi bi-sliders me-3" aria-hidden="true"></i>
+                                    RTL
+                                </a>
+                            </li>
+                        </ul>
+                        
+                        <p class="sidebar-heading mt-3 mb-2 px-2">
+                            Account Pages
+                        </p>
+
+                        <ul class="nav nav-pills flex-column gap-1">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="bi bi-person-fill me-3" aria-hidden="true"></i>
+                                        Profile
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="bi bi-file-lock-fill me-3" aria-hidden="true"></i>
+                                        Sign In
+                                </a>
+                            </li>
+
+                             <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="bi bi-rocket-takeoff-fill me-3" aria-hidden="true"></i>
+                                        Sign Up
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+          </aside>
+
+          <!-- Main Content -->
+           <main class="dashboard-main">
+                <div class="container-fluid px-3 px-md-4 py-3">
+                    <!-- Top bar -->
+                     <header class="dashboard-header mb-3">
+                        <div class="row align-items-center g-3">
+                            <div class="col-12 col-md">
+                                <nav aria-label="Breadcrumb">
+                                    <ol class="breadcrumb small mb-1">
+                                        <li class="breadcrumb-item">
+                                            <a href="#">Pages</a>
+                                        </li>
+
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Dashboard
+                                        </li>
+                                    </ol>
+                                </nav>
+
+                                <h1 class="h5 fw-bold mb-0">Dashboard</h1>
+                            </div>
+
+                            <div class="col-12 col-md-auto">
+                                <div class="d-flex flex-nowrap align-items-center gap-2">
+                                    <div class="input-group dashboard-search">
+                                        <span class="input-group-text bg-white border-end-0">
+                                            <i class="bi bi-search" aria-hidden="true"></i>
+                                        </span>
+
+                                        <input
+                                            class="form-control border-start-0"
+                                            type="search"
+                                            placeholder="Type here..."
+                                            aria-label="Search dashboard"
+                                        >
+                                    </div>
+
+                                    <a class="header-action" href="#">
+                                        <i class="bi bi-person-fill" aria-hidden="true"></i>
+                                        Sign In
+                                    </a>
+
+                                    <button
+                                        class="btn header-icon"
+                                        type="button"
+                                        aria-label="Settings"
+                                    >
+                                        <i class="bi bi-gear-fill" aria-hidden="true"></i>
+                                    </button>
+
+                                    <button
+                                        class="btn header-icon"
+                                        type="button"
+                                        aria-label="Notifications"    
+                                    >
+                                        <i class="bi bi-bell-fill" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                     </header>
+
+                     <!-- Dashboard overview -->
+                      <section aria-labelledby="dashboardContentTitle">
+                        <h2 class="visually-hidden" id="dashboardContentTitle">
+                            Dashboard overview
+                        </h2>
+
+                        <div class="row g-3">
+                            <!-- Today's Money -->
+                             <div class="col-12 col-sm-6 col-xl-3">
+                                <article class="card stat-card h-100 border-0">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <p class="stat-label mb-1">
+                                                Today's Money
+                                            </p>
+
+                                            <div class="d-flex align-items-baseline gap-2">
+                                                <h3 class="stat-value mb-0">$53,000</h3>
+                                                <span class="stat-change positive">+55%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="stat-icon" aria-hidden="true">
+                                            <i class="bi bi-wallet2"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                             </div>
+
+                             <!-- Today's Users -->
+                              <div class="col-12 col-sm-6 col-xl-3">
+                                <article class="card stat-card h-100 border-0">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <p class="stat-label mb-1">
+                                                Today's Users
+                                            </p>
+
+                                            <div class="d-flex align-items-baseline gap-2">
+                                                <h3 class="stat-value mb-0">2,300</h3>
+                                                <span class="stat-change positive">+5%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="stat-icon" aria-hidden="true">
+                                            <i class="bi bi-globe2"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                             </div>
+
+                             <!-- New Clients -->
+                              <div class="col-12 col-sm-6 col-xl-3">
+                                <article class="card stat-card h-100 border-0">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <p class="stat-label mb-1">
+                                                New Clients
+                                            </p>
+
+                                            <div class="d-flex align-items-baseline gap-2">
+                                                <h3 class="stat-value mb-0">+3,052</h3>
+                                                <span class="stat-change negative">-14%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="stat-icon" aria-hidden="true">
+                                            <i class="bi bi-file-earmark-text"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                             </div>
+
+                            <!-- Total Sales -->
+                             <div class="col-12 col-sm-6 col-xl-3">
+                                <article class="card stat-card h-100 border-0">
+                                    <div class="card-body d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <p class="stat-label mb-1">
+                                                Total Sales
+                                            </p>
+
+                                            <div class="d-flex align-items-baseline gap-2">
+                                                <h3 class="stat-value mb-0">$173,000</h3>
+                                                <span class="stat-change positive">+8%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="stat-icon" aria-hidden="true">
+                                            <i class="bi bi-cart-fill"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                             </div>
+                        </div>
+
+                        <!-- Analytics Charts -->
+                         <div class="row g-3 mt-1 analytics-row">
+                            <!-- Active Users -->
+                             <div class="col-12 col-lg-6 order-lg-2">
+                                <article class="card dashboard-card analytics-card h-100 border-0">
+                                    <div class="card-body">
+                                        <div class="chart-panel active-users-chart mb-4">
+                                            <div class="active-users-graph">
+                                                <div class="chart-y-axis" aria-hidden="true">
+                                                    <span>500</span>
+                                                    <span>400</span>
+                                                    <span>300</span>
+                                                    <span>200</span>
+                                                    <span>100</span>
+                                                    <span>0</span>
+                                                </div>
+
+                                                <div class="bar-chart" role="img" aria-label="Active users across eight reporting periods, with values ranging from approximately 180 to 480">
+                                                    <span class="chart-bar" style="--bar-height: 36%;"></span>
+                                                    <span class="chart-bar" style="--bar-height: 55%;"></span>
+                                                    <span class="chart-bar" style="--bar-height: 43%;"></span>
+                                                    <span class="chart-bar" style="--bar-height: 70%;"></span>
+                                                    <span class="chart-bar" style="--bar-height: 48%;"></span>
+                                                    <span class="chart-bar" style="--bar-height: 76%;"></span>
+                                                    <span class="chart-bar" style="--bar-height: 63%;"></span>
+                                                    <span class="chart-bar" style="--bar-height: 92%;"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h2 class="dashboard-card-title">Active Users</h2>
+
+                                        <p class="dashboard-card-description">
+                                            <span class="text-success fw-bold">(+23)</span>
+                                            than last week
+                                        </p>
+
+                                        <div class="row g-3 mt-2">
+                                            <div class="col-6 col-sm-3">
+                                                <div class="user-stat">
+                                                    <div class="user-stat-heading">
+                                                        <span class="mini-icon" aria-hidden="true">
+                                                            <i class="bi bi-wallet2"></i>
+                                                        </span>
+                                                        <span>Users</span>
+                                                    </div>
+
+                                                    <strong>32,984</strong>
+
+                                                    <div class="progress" role="progressbar" aria-label="Users progress" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 80%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6 col-sm-3">
+                                                <div class="user-stat">
+                                                    <div class="user-stat-heading">
+                                                        <span class="mini-icon" aria-hidden="true">
+                                                            <i class="bi bi-rocket-takeoff"></i>
+                                                        </span>
+                                                        <span>Clicks</span>
+                                                    </div>
+
+                                                    <strong>2,42m</strong>
+
+                                                    <div class="progress" role="progressbar" aria-label="Clicks progress" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 70%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6 col-sm-3">
+                                                <div class="user-stat">
+                                                    <div class="user-stat-heading">
+                                                        <span class="mini-icon" aria-hidden="true">
+                                                            <i class="bi bi-cart-fill"></i>
+                                                        </span>
+                                                        <span>Sales</span>
+                                                    </div>
+
+                                                    <strong>2,400$</strong>
+
+                                                    <div class="progress" role="progressbar" aria-label="Sales progress" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 55%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6 col-sm-3">
+                                                <div class="user-stat">
+                                                    <div class="user-stat-heading">
+                                                        <span class="mini-icon" aria-hidden="true">
+                                                            <i class="bi bi-tools"></i>
+                                                        </span>
+                                                        <span>Items</span>
+                                                    </div>
+
+                                                    <strong>320</strong>
+
+                                                    <div class="progress" role="progressbar" aria-label="Items progress" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                        <div class="progress-bar" style="width: 40%;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                             </div>
+
+                             <!-- Sales Overview -->
+                              <div class="col-12 col-lg-6 order-lg-1">
+                                <article class="card dashboard-card analytics-card h-100 border-0">
+                                    <div class="card-body">
+                                        <h2 class="dashboard-card-title">Sales Overview</h2>
+
+                                        <p class="dashboard-card-description mb-3">
+                                            <span class="text-success fw-bold">
+                                                (+5) more
+                                            </span>
+                                            in 2021
+                                        </p>
+
+                                        <div class="sales-chart" role="img" aria-label="Monthly sales overview from January to December with values ranging from 0 to 500">
+                                            <div class="sales-y-axis" aria-hidden="true">
+                                                <span>500</span>
+                                                <span>400</span>
+                                                <span>300</span>
+                                                <span>200</span>
+                                                <span>100</span>
+                                                <span>0</span>
+                                            </div>
+
+                                            <div class="sales-plot">
+                                                <div class="sales-grid" aria-hidden="true">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+
+                                                <svg class="sales-chart-svg" viewBox="0 0 600 220" preserveAspectRatio="none" aria-hidden="true">
+                                                    <defs>
+                                                        <linearGradient id="primarySalesFill" x1="0" y1="0" x2="0" y2="1">
+                                                            <stop offset="0%" stop-color="#4fd1c5" stop-opacity="0.32"/>
+                                                            <stop offset="100%" stop-color="#4fd1c5" stop-opacity="0"/>
+                                                        </linearGradient>
+
+                                                        <linearGradient id="secondarySalesFill" x1="0" y1="0" x2="0" y2="1">
+                                                            <stop offset="0%" stop-color="#2d3748" stop-opacity="0.18"/>
+                                                            <stop offset="100%" stop-color="#2d3748" stop-opacity="0"/>
+                                                        </linearGradient>
+                                                    </defs>
+
+                                                    <path class="sales-area primary-area" d="M0 175 C25 175, 30 125, 55 128 S85 185, 110 174 S140 80, 165 95 S195 155, 220 145 S250 60, 275 70 S305 145, 330 130 S360 35, 385 48 S415 115, 440 105 S470 40, 495 55 S525 112,550 90 S580 30, 600 42 L600 220 L0 220 Z"/>
+                                                    <path class="sales-area secondary-area" d="M0 192 C25 190, 30 160, 55 165 S85 200, 110 188 S140 145, 165 150 S195 185, 220 172 S250 120, 275 128 S305 170, 330 155 S360 95, 385 110 S415 160, 440 145 S470 92, 495 105 S525 148, 550 135 S580 78, 600 90 L600 220 L0 220 Z"/>
+                                                    <path class="sales-line secondary-line" d="M0 192 C25 190, 30 160, 55 165 S85 200, 110 188 S140 145, 165 150 S195 185, 220 172 S250 120, 275 128 S305 170, 330 155 S360 95, 385 110 S415 160, 440 145 S470 92, 495 105 S525 148, 550 135 S580 78, 600 90"/>
+                                                    <path class="sales-line primary-line" d="M0 175 C25 175, 30 125, 55 128 S85 185, 110 174 S140 80, 165 95 S195 155, 220 145 S250 60, 275 70 S305 145, 330 130 S360 35, 385 48 S415 115, 440 105 S470 40, 495 55 S525 112, 550 90 S580 30, 600 42"/>
+                                                </svg>
+
+                                                <div class="chart-months" aria-hidden="true">
+                                                    <span>Jan</span>
+                                                    <span>Feb</span>
+                                                    <span>Mar</span>
+                                                    <span>Apr</span>
+                                                    <span>May</span>
+                                                    <span>Jun</span>
+                                                    <span>Jul</span>
+                                                    <span>Aug</span>
+                                                    <span>Sep</span>
+                                                    <span>Oct</span>
+                                                    <span>Nov</span>
+                                                    <span>Dec</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                              </div>
+                         </div>
+
+                         <!-- Projects and Orders -->
+                         <div class="row g-3 mt-1 bottom-row">
+                            <!-- Projects -->
+                             <div class="col-12 col-xl-8">
+                                <article class="card dashboard-card border-0">
+                                    <div class="card-body p-0">
+                                        <header class="p-4 pb-3">
+                                            <h2 class="dashboard-card-title">Projects</h2>
+
+                                            <p class="dashboard-card-description mb-0">
+                                                <i class="bi bi-check-circle-fill text-success me-1" aria-hidden="true"></i>
+                                                <strong>30 done</strong> this month
+                                            </p>
+                                        </header>
+
+                                        <div class="table-responsive projects-table-wrapper">
+                                            <table class="table projects-table align-middle mb-0">
+                                                <caption class="visually-hidden">
+                                                    Current projects, members, budgets, and completion progress
+                                                </caption>
+
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Companies</th>
+                                                        <th scope="col">Members</th>
+                                                        <th scope="col">Budget</th>
+                                                        <th scope="col">Completion</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <!-- Chakra Soft UI Version -->
+                                                        <th scope="row">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <span class="company-icon company-blue">
+                                                                    <i class="bi bi-box-fill" aria-hidden="true"></i>
+                                                                </span>
+                                                                Chakra Soft UI Version
+                                                            </div>
+                                                        </th>
+
+                                                        <td>
+                                                           <div class="member-list">
+                                                                <span class="member-avatar">AF</span>
+                                                                <span class="member-avatar">JS</span>
+                                                                <span class="member-avatar">MP</span>
+                                                                <span class="member-avatar">+4</span>
+                                                           </div> 
+                                                        </td>
+
+                                                        <td>$14,000</td>
+
+                                                        <td>
+                                                            <div class="completion-value mb-1">60%</div>
+
+                                                            <div class="progress project-progress" role="progressbar" aria-label="Chakra Soft UI completion" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar" style="width: 60%;"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <!-- Add Progress Track -->
+                                                        <th scope="row">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <span class="company-icon company-red">
+                                                                    <i class="bi bi-filetype-html" aria-hidden="true"></i>
+                                                                </span>
+                                                                Add Progress Track
+                                                            </div>
+                                                        </th>
+
+                                                        <td>
+                                                           <div class="member-list">
+                                                                <span class="member-avatar">AF</span>
+                                                                <span class="member-avatar">JS</span>
+                                                           </div> 
+                                                        </td>
+
+                                                        <td>$3,000</td>
+
+                                                        <td>
+                                                            <div class="completion-value mb-1">10%</div>
+
+                                                            <div class="progress project-progress" role="progressbar" aria-label="Add Progress Track completion" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar" style="width: 10%;"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <!-- Fix Platform Errors -->
+                                                        <th scope="row">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <span class="company-icon company-cyan">
+                                                                    <i class="bi bi-credit-card-fill" aria-hidden="true"></i>
+                                                                </span>
+                                                                Fix Platform Errors
+                                                            </div>
+                                                        </th>
+
+                                                        <td>
+                                                           <div class="member-list">
+                                                                <span class="member-avatar">MP</span>
+                                                                <span class="member-avatar">JS</span>
+                                                           </div> 
+                                                        </td>
+
+                                                        <td>Not set</td>
+
+                                                        <td>
+                                                            <div class="completion-value mb-1">100%</div>
+
+                                                            <div class="progress project-progress" role="progressbar" aria-label="Fix Platform Errors completion" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar" style="width: 100%;"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <!-- Launch our Mobile App -->
+                                                        <th scope="row">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <span class="company-icon company-orange">
+                                                                    <i class="bi bi-bootstrap-fill" aria-hidden="true"></i>
+                                                                </span>
+                                                                Launch our Mobile App
+                                                            </div>
+                                                        </th>
+
+                                                        <td>
+                                                           <div class="member-list">
+                                                                <span class="member-avatar">AF</span>
+                                                                <span class="member-avatar">MP</span>
+                                                                <span class="member-avatar">+2</span>
+                                                           </div> 
+                                                        </td>
+
+                                                        <td>$32,000</td>
+
+                                                        <td>
+                                                            <div class="completion-value mb-1">100%</div>
+
+                                                            <div class="progress project-progress" role="progressbar" aria-label="Launch Mobile App completion" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar" style="width: 100%;"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <!-- Add the new Pricing Page -->
+                                                        <th scope="row">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <span class="company-icon company-purple">
+                                                                    <i class="bi bi-tag-fill" aria-hidden="true"></i>
+                                                                </span>
+                                                                Add the New Pricing page
+                                                            </div>
+                                                        </th>
+
+                                                        <td>
+                                                           <div class="member-list">
+                                                                <span class="member-avatar">AF</span>
+                                                                <span class="member-avatar">JS</span>
+                                                                <span class="member-avatar">MP</span>
+                                                                <span class="member-avatar">+1</span>
+                                                           </div> 
+                                                        </td>
+
+                                                        <td>$400</td>
+
+                                                        <td>
+                                                            <div class="completion-value mb-1">25%</div>
+
+                                                            <div class="progress project-progress" role="progressbar" aria-label="Add the New Pricing Page completion" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar" style="width: 25%;"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <!-- New Online Shop -->
+                                                        <th scope="row">
+                                                            <div class="d-flex align-items-center gap-3">
+                                                                <span class="company-icon company-pink">
+                                                                    <i class="bi bi-shop" aria-hidden="true"></i>
+                                                                </span>
+                                                                Redesign New Online Shop
+                                                            </div>
+                                                        </th>
+
+                                                        <td>
+                                                           <div class="member-list">
+                                                                <span class="member-avatar">JS</span>
+                                                                <span class="member-avatar">MP</span> 
+                                                           </div> 
+                                                        </td>
+
+                                                        <td>$7,600</td>
+
+                                                        <td>
+                                                            <div class="completion-value mb-1">40%</div>
+
+                                                            <div class="progress project-progress" role="progressbar" aria-label="Redesign New Online Shop completion" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                                                                <div class="progress-bar" style="width: 40%;"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </article>
+                             </div>
+
+                            <!-- Orders Overview -->
+                             <div class="col-12 col-xl-4 orders-column">
+                                <article class="card dashboard-card h-100 border-0">
+                                    <div class="card-body p-4">
+                                        <header class="mb-3">
+                                            <h2 class="dashboard-card-title">Orders Overview</h2>
+
+                                            <p class="dashboard-card-description mb-0">
+                                                <strong class="text-success">30%</strong> this month
+                                            </p>
+                                        </header>
+                                        
+                                        <ol class="order-timeline list-unstyled mb-0">
+                                            <li class="order-item">
+                                                <span class="order-icon text-success" aria-hidden="true">
+                                                    <i class="bi bi-bell-fill"></i>
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="order-title">$2,400, Design changes</h3>
+                                                    <time class="order-time" datetime="2026-12-22T19:20">
+                                                        22 Dec, 7:20 PM
+                                                    </time>
+                                                </div>
+                                            </li>
+
+                                            <li class="order-item">
+                                                <span class="order-icon text-danger" aria-hidden="true">
+                                                    <i class="bi bi-filetype-js"></i>
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="order-title">New order #4219423</h3>
+                                                    <time class="order-time" datetime="2026-12-21T23:21">
+                                                        21 Dec, 11:21 PM
+                                                    </time>
+                                                </div>
+                                            </li>
+
+                                            <li class="order-item">
+                                                <span class="order-icon text-primary" aria-hidden="true">
+                                                    <i class="bi bi-cart-fill"></i>
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="order-title">Server Payments for April</h3>
+                                                    <time class="order-time" datetime="2026-12-21T21:28">
+                                                        21 Dec, 9:28 PM
+                                                    </time>
+                                                </div>
+                                            </li>
+
+                                            <li class="order-item">
+                                                <span class="order-icon text-warning" aria-hidden="true">
+                                                    <i class="bi bi-credit-card-fill"></i>
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="order-title">New card added for order #3210145</h3>
+                                                    <time class="order-time" datetime="2026-12-20T15:52">
+                                                        20 Dec, 3:52 PM
+                                                    </time>
+                                                </div>
+                                            </li>
+
+                                            <li class="order-item">
+                                                <span class="order-icon text-info" aria-hidden="true">
+                                                    <i class="bi bi-box-fill"></i>
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="order-title">Unlick packages for Development</h3>
+                                                    <time class="order-time" datetime="2026-12-19T23:35">
+                                                        19 Dec, 11:35 PM
+                                                    </time>
+                                                </div>
+                                            </li>
+
+                                            <li class="order-item">
+                                                <span class="order-icon text-secondary" aria-hidden="true">
+                                                    <i class="bi bi-cash-stack"></i>
+                                                </span>
+
+                                                <div>
+                                                    <h3 class="order-title">New order #9851258</h3>
+                                                    <time class="order-time" datetime="2026-12-18T16:41">
+                                                        18 Dec, 4:41 PM
+                                                    </time>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </article>
+                             </div>
+                         </div>
+                      </section>
+                </div>
+           </main>
+    </div>
+</body>
+</html>

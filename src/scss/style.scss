@@ -1,0 +1,582 @@
+// Variables
+$sidebar-width: 240px;
+$dashboard-bg: #f8f9fa;
+$text-dark: #2d3748;
+$text-muted: #718096;
+$accent: #4fd1c5;
+
+// Base styles
+body{
+    min-height: 100vh;
+    background-color: $dashboard-bg;
+    color: $text-dark;
+}
+
+// Dashboard layout and sidebar
+.dashboard-layout{
+    min-height: 100vh;
+}
+
+.dashboard-sidebar{
+    width: $sidebar-width;
+    background-color: #ffffff;
+
+    .offcanvas-body{
+        min-height: 100vh;
+    }
+
+    .nav-link{
+        color: $text-muted;
+        font-size: 0.78rem;
+        font-weight: 600;
+        border-radius: 0.75rem;
+        padding: 0.55rem 0.75rem;
+
+        &:hover,
+        &:focus-visible{
+            color: $text-dark;
+            background-color: #f7fafc;
+        }
+
+        &.active{
+            color: $text-dark;
+            background-color: #ffffff;
+            box-shadow: 0 4px 18px rgba(45, 55, 72, 0.08);
+
+            i{
+                color: #ffffff;
+                background-color: $accent;
+            }
+        }
+
+        i{
+            display: inline-grid;
+            width: 26px;
+            height: 26px;
+            place-items: center;
+            color: $accent;
+            background-color: #ffffff;
+            border-radius: 0.45rem;
+            font-size: 0.75rem;
+            box-shadow: 0 3px 12px rgba(45, 55, 72, 0.08);
+        }
+    }
+}
+
+.sidebar-brand{
+    min-height: 48px;
+    color: $text-dark;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.sidebar-heading {
+    color: $text-dark;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+    
+// Header and search
+.dashboard-header {
+    .breadcrumb-item,
+    .breadcrumb-item a {
+        color: $text-muted;
+        text-decoration: none;
+    }
+}
+
+.dashboard-search {
+    width: 190px;
+    flex-shrink: 1;
+
+    .form-control,
+    .input-group-text {
+        min-height: 38px;
+        border-color: #e2e8f0;
+        font-size: 0.75rem;
+    }
+
+    .input-group-text {
+        padding-right: 0.35rem;
+        border-radius: 0.75rem 0 0 0.75rem;
+    }
+
+    .form-control {
+        border-radius: 0 0.75rem 0.75rem 0;
+    }
+}
+
+.header-action {
+    color: $text-muted;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus-visible {
+        color: $text-dark;
+    }
+}
+
+.header-icon{
+    padding: 0;
+    color: $text-muted;
+
+    &:hover,
+    &:focus-visible{
+        color: $text-dark;
+    }
+}
+
+.stat-card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 18px rgba(45, 55, 72, 0.06);
+
+    .card-body {
+        min-height: 80px;
+        padding: 1rem 1.15rem;
+    }
+}
+
+// Statistic cards
+.stat-label {
+    color: $text-muted;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.stat-value {
+    color: $text-dark;
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.stat-change {
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    &.positive {
+        color: #48bb78;
+    }
+
+    &.negative {
+        color: #e53e3e;
+    }
+}
+
+.stat-icon {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    color: #ffffff;
+    background-color: $accent;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+}
+
+// Analytics cards and charts
+.dashboard-card {
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 4px 18px rgba(45, 55, 72, 0.06);
+
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+.analytics-row > div {
+    display: flex;
+}
+
+.analytics-card {
+    width: 100%;
+}
+
+.dashboard-card-title {
+    margin-bottom: 0.25rem;
+    color: $text-dark;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.dashboard-card-description {
+    color: $text-muted;
+    font-size: 0.8rem;
+}
+
+// Active Users chart
+.chart-panel {
+    min-height: 190px;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+    border-radius: 0.9rem;   
+}
+
+.active-users-graph {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 0.75rem;
+    height: 158px;
+}
+
+.chart-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 2px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.55rem;
+    line-height: 1;
+    text-align: right;
+}
+
+.bar-chart {
+    display: flex;
+    height: 158px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.chart-bar {
+    flex: 0 1 8px;
+    width: 8px;
+    height: var(--bar-height);
+    min-width: 5px;
+    max-width: 8px;
+    background-color: #ffffff;
+    border-radius: 999px;
+}
+
+.user-stat-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.45rem;
+    color: $text-muted;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.user-stat{
+    strong{
+        display: block;
+        margin-bottom: 0.45rem;
+        color: $text-dark;
+        font-size: 0.85rem;
+    }
+
+    .progress {
+        height: 4px;
+        background-color: #edf2f7;
+    }
+
+    .progress-bar {
+        background-color: $accent;
+    }
+}
+
+.mini-icon {
+    display: inline-grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    color: #ffffff;
+    background-color: $accent;
+    border-radius: 0.35rem;
+}
+
+// Sales Overview chart
+.sales-chart {
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 0.6rem;
+    height: 280px;
+    overflow: hidden;
+}
+
+.sales-y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 24px;
+    color: $text-muted;
+    font-size: 0.55rem;
+    line-height: 1;
+    text-align: right;
+}
+
+.sales-plot {
+    position: relative;
+    min-width: 0;
+    height: 100%;
+    padding-bottom: 24px;
+}
+
+.sales-grid {
+    position: absolute;
+    inset: 0 0 24px;
+
+    span {
+        position: absolute;
+        right: 0;
+        left: 0;
+        border-top: 1px dashed #e2e8f0;
+
+        @for $line from 1 through 6 {
+            &:nth-child(#{$line}) {
+                top: calc(($line - 1) * 20%);
+            }
+        }
+    }
+}
+
+.sales-chart-svg {
+    position: absolute;
+    inset: 0 0 24px;
+    z-index: 1;
+    width: 100%;
+    height: calc(100% - 24px);
+    overflow: visible;
+}
+
+.sales-area {
+    stroke: none;
+}
+
+.primary-area {
+    fill: url("#primarySalesFill");
+}
+
+.secondary-area {
+    fill: url("#secondarySalesFill");
+}
+
+.sales-line {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.primary-line {
+    stroke: $accent;
+}
+
+.secondary-line {
+    stroke: #2d3748;
+}
+
+.chart-months {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    color: $text-muted;
+    font-size: 0.52rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.orders-column {
+    display: flex;
+
+    .dashboard-card {
+        width: 100%;
+    }
+}
+
+// Projects table
+.projects-table-wrapper {
+    overflow-x: auto;
+}
+@media (min-width:768px) {
+    .projects-table-wrapper {
+        overflow: visible;
+    }
+}
+
+.projects-table {
+    width: 100%;
+    min-width: 680px;
+
+    th, td {
+        padding: 0.7rem 1rem;
+        color: $text-muted;
+        font-size: 0.75rem;
+        vertical-align: middle;
+        border-color: #edf2f7;
+    }
+
+    thead th {
+        color: #a0aec0;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.03rem;
+        text-transform: uppercase;
+    }
+
+    tbody th {
+        color: $text-dark;
+        font-weight: 600;
+    }
+
+    tbody td:nth-child(3) {
+        color: $text-dark;
+        font-weight: 700;
+    }
+}
+
+.company-icon {
+    display: inline-grid;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.company-blue {
+    background-color: #3182ce;
+}
+
+.company-red {
+    background-color: #e52e3e;
+}
+
+.company-cyan {
+    background-color: #38b2ac;
+}
+
+.company-orange {
+    background-color: #ed8936;
+}
+
+.company-purple {
+    background-color: #805ad5;
+}
+
+.company-pink {
+    background-color: #d53f8c;
+}
+
+.member-list {
+    display: flex;
+    padding-left: 0.5rem;
+}
+
+.member-avatar {
+    display: inline-grid;
+    width: 30px;
+    height: 30px;
+    margin-left: -0.5rem;
+    place-items: center;
+    color: #ffffff;
+    background-color: #718096;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    font-size: 0.55rem;
+    font-weight: 700;
+
+    &:nth-child(2) {
+        background-color: $accent;
+    }
+
+    &:nth-child(3) {
+        background-color: #805ad5;
+    }
+
+     &:nth-child(4) {
+        background-color: #ed8936;
+    }
+}
+
+.completion-value {
+    color: $accent;
+    font-size: 0.7rem;
+    font-weight: 700;    
+}
+
+.project-progress {
+    width: 120px;
+    height: 4px;
+    background-color: #edf2f7;
+
+    .progress-bar {
+        background-color: $accent;
+    }
+}
+
+.order-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 0.75rem;
+    min-height: 55px;
+
+    &:not(:last-child)::before {
+        position: absolute;
+        top: 29px;
+        bottom: 0;
+        left: 11px;
+        width: 2px;
+        background-color: #e2e8f0;
+        content: "";
+    }
+}
+
+.order-icon {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 24px;
+    height: 24px;
+    place-items: center;
+    background-color: #ffffff;
+    border-radius: 50%;
+    font-size: 0.85rem;
+}
+
+.order-title {
+    margin-bottom: 0.2rem;
+    color: $text-dark;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.order-time {
+    color: #a0aec0;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+// Responsive layout
+@media (min-width: 992px) {
+    .dashboard-layout {
+        display: grid;
+        grid-template-columns: $sidebar-width minmax(0, 1fr);
+    }
+
+    .dashboard-sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        visibility: visible !important;
+        transform: none !important;
+        border-right: 0;
+    }
+}
